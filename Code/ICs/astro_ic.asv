@@ -1,0 +1,10 @@
+function astro = astro_ic(NXS, CON)
+astro = 
+eci2rtn = rv2RTN(NXS.ic.r_i, NXS.ic.v_i);
+
+rel_vect = [200; 100; 0];
+
+astro.ic.r_i = eci2rtn' * rel_vect + NXS.ic.r_i;
+astro.ic.v_i = sqrt(CON.mu / astro.ic.r_i);
+astro.ic.q_b_i_b = zeros(4,1);
+end
