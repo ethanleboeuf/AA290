@@ -6,3 +6,10 @@ plot3(astro_out(:, 1), astro_out(:, 2), astro_out(:, 3),'g', 'LineWidth', 2);
 [x , y, z] = ellipsoid(0, 0, 0, 6378.14 , 6378.14, 6378.14, 20);
 surface(x, y , z ,'FaceColor','blue','EdgeColor','black');
 axis  equal;
+hold off
+
+figure()
+plot(ds_crv(:, 2), ds_crv(:, 1))
+hold on
+set ( gca, 'xdir', 'reverse' )
+hold off

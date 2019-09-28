@@ -15,3 +15,4 @@ sats.astro = astro_ic(sats.NXS, CON);
 %% Sim Setup
 SimEndTime = 7200;
 TimeStep = 5;
+SampleTime = 10;
