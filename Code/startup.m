@@ -2,7 +2,7 @@
 
 addpath('ICs')
 addpath('Bus_init')
-addpath('Images')
+addpath('Images_Code')
 addpath('Models')
 addpath('Use Cases')
 addpath('Utils')
