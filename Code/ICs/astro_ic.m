@@ -1,5 +1,5 @@
 function astro = astro_ic(NXS, CON)
-astro = evalin('base','Simulink.Bus.createMATLABStruct({"Bus_sat"})');
+astro = evalin('base','Simulink.Bus.createMATLABStruct({''Bus_sat''})');
 eci2rtn = rv2RTN(NXS.ic.r_i, NXS.ic.v_i);
 
 rel_vect = [200; 100; 0];

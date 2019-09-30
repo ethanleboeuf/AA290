@@ -1,5 +1,5 @@
 function NXS = NXS_ic()
-NXS = evalin('base','Simulink.Bus.createMATLABStruct({"Bus_sat"})');
+NXS = evalin('base','Simulink.Bus.createMATLABStruct({''Bus_sat''})');
 r_a = 6869;
 r_p = 6862;
 inc = 46;

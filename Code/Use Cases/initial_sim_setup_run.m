@@ -4,7 +4,11 @@
 % two spacecrafts that are just propogated through time
 clear all
 close all
-cd('C:\Users\Ethan\Documents\MATLAB\StanfordGrad\AA 290\AA290\Code')
+if contains(cd, 'StanfordGrad')
+    cd('C:\Users\Ethan\Documents\MATLAB\StanfordGrad\AA 290\AA290\Code')
+elseif contains(cd, 'ethanl20')
+    cd('C:\Users\ethanl20\Documents\MATLAB\AA290\Code')
+end
 load('Config_standard.mat')
 %% Initialize Buses
 OES_init_bus;
@@ -14,8 +18,8 @@ sats.NXS = NXS_ic();
 sats.astro = astro_ic(sats.NXS, CON);
 
 %% Sim Setup
-SimEndTime = 24 * 60 * 60 * 20;
+SimEndTime = 24 * 60 * 60 * 1;
 TimeStep = 100;
-SampleTime = 1000;
+SampleTime = 200;
 
-sim('OES.slx')
+sim('OES_compatible.slx')
