@@ -8,11 +8,14 @@ cd('C:\Users\Ethan\Documents\MATLAB\StanfordGrad\AA 290\AA290\Code')
 load('Config_standard.mat')
 %% Initialize Buses
 OES_init_bus;
+CON.gravityFlag = 1;
 %% Spacecraft ICs
 sats.NXS = NXS_ic();
 sats.astro = astro_ic(sats.NXS, CON);
 
 %% Sim Setup
-SimEndTime = 7200;
-TimeStep = 5;
-SampleTime = 10;
+SimEndTime = 24 * 60 * 60 * 20;
+TimeStep = 100;
+SampleTime = 1000;
+
+sim('OES.slx')
