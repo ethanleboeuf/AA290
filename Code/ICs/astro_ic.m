@@ -9,7 +9,7 @@ r_hat = astro.ic.r_i / norm(astro.ic.r_i);
 n_hat = cross(NXS.ic.r_i, NXS.ic.v_i) / norm(cross(NXS.ic.r_i, NXS.ic.v_i));
 v_hat = cross(n_hat, r_hat);
 
-ecc = 0.02;
+ecc = 0.005;
 p = norm(astro.ic.r_i) * (1 + ecc);
 v_mag = sqrt(CON.mu * p) / norm(astro.ic.r_i);
 

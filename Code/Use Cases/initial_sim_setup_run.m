@@ -26,8 +26,8 @@ sats.astro.DynFlag = DynFlag;
 %% Sim Setup
 variants_ic;
 SimEndTime = 24 * 60 * 60 * 50;
-TimeStep = 50;
-SampleTime = 500;
+TimeStep = 10;
+SampleTime = 540;
 
 % sim('OES.slx')
 % KeplerData.r_i = NXS_out(:, 1:3);

@@ -1,7 +1,7 @@
 function plot_oe(t_out, sat1,sat2, compareFlag)
 %plot_oe Plots the orbital elements of the two satellites
 %   compareFlag allows the plots to be overlayed or not
-
+set(0,'defaultAxesFontSize',12)
 fig1 = figure();
 subplot(5,1,1);
 plot(t_out, sat1.a.Data)
@@ -78,5 +78,6 @@ else
     plot(t_out, sat2.w.Data)
     sgtitle('Astro Orbital Elements')
 end
+set(0,'defaultAxesFontSize',20)
 end
 
