@@ -10,16 +10,34 @@ elseif contains(cd, 'ethanl20')
     cd('C:\Users\ethanl20\Documents\MATLAB\AA290\Code')
 end
 load('Config_standard.mat')
+
+%% Initial Flags (For Variants Right Now)
+DynFlag = 0;
 %% Initialize Buses
 OES_init_bus;
-CON.gravityFlag = 1;
+CON.gravityFlag = 0;
+CON.dragFlag = 1;
 %% Spacecraft ICs
 sats.NXS = NXS_ic();
 sats.astro = astro_ic(sats.NXS, CON);
+sats.NXS.DynFlag = DynFlag;
+sats.astro.DynFlag = DynFlag;
 
 %% Sim Setup
-SimEndTime = 24 * 60 * 60 * 1;
-TimeStep = 100;
-SampleTime = 200;
+variants_ic;
+SimEndTime = 24 * 60 * 60 * 50;
+TimeStep = 50;
+SampleTime = 500;
 
-sim('OES_compatible.slx')
+% sim('OES.slx')
+% KeplerData.r_i = NXS_out(:, 1:3);
+% KeplerData.v_i = NXS_out(:, 4:6);
+
+DynFlag = 0;
+sim('OES.slx')
+NumData.r_i = NXS_out(:, 1:3);
+NumData.v_i = NXS_out(:, 4:6);
+
+
+
+

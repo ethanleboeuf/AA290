@@ -7,3 +7,12 @@ addpath('Models')
 addpath('Use Cases')
 addpath('Utils')
 addpath('Post Processing')
+
+
+myCacheFolder = fullfile(cd, 'cache');
+myCodeFolder = fullfile(cd, 'codegen');
+
+Simulink.fileGenControl('set',...
+    'CacheFolder', myCacheFolder,...
+    'CodeGenFolder', myCodeFolder,...
+    'createDir', true)
