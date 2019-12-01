@@ -15,7 +15,7 @@ load('Config_standard.mat')
 DynFlag = 0;
 %% Initialize Buses
 OES_init_bus;
-CON.gravityFlag = 0;
+CON.gravityFlag = 1;
 CON.dragFlag = 1;
 %% Spacecraft ICs
 sats.NXS = NXS_ic();
@@ -25,15 +25,16 @@ sats.astro.DynFlag = DynFlag;
 
 %% Sim Setup
 variants_ic;
-SimEndTime = 24 * 60 * 60 * 50;
-TimeStep = 10;
-SampleTime = 540;
+SimEndTime = 1.5 * 60 * 60 * 10;
+TimeStep = 0.1;
+CON.dt = TimeStep;
+computer_dt = 0.1;
+CON.computer_dt = computer_dt;
+SampleTime = 0.1;
+CON.SampleTime = SampleTime;
+CON.NavFlag = 0;
+CON.guidFlag = 1;
 
-% sim('OES.slx')
-% KeplerData.r_i = NXS_out(:, 1:3);
-% KeplerData.v_i = NXS_out(:, 4:6);
-
-DynFlag = 0;
 sim('OES.slx')
 NumData.r_i = NXS_out(:, 1:3);
 NumData.v_i = NXS_out(:, 4:6);

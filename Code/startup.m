@@ -7,6 +7,7 @@ addpath('Models')
 addpath('Use Cases')
 addpath('Utils')
 addpath('Post Processing')
+addpath('S3')
 
 
 myCacheFolder = fullfile(cd, 'cache');
