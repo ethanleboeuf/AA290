@@ -4,7 +4,7 @@ eci2rtn = rv2RTN(NXS.ic.r_i, NXS.ic.v_i);
 [a,ecc,inc,omega,w,nu] = rvECI2oe(NXS.ic.r_i, NXS.ic.v_i, CON.mu);
 Rc = norm(NXS.ic.r_i);
 
-rel_vect = [2; 15; 0];
+rel_vect = [2; 41; 0];
 % [r_rect, v_rect] = curv2rect(rel_vect, v_curv, Rc)
 
 a = a + rel_vect(1) ;

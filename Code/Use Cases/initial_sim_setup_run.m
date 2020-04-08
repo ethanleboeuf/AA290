@@ -25,7 +25,7 @@ sats.astro.DynFlag = DynFlag;
 
 %% Sim Setup
 variants_ic;
-SimEndTime = 1.5 * 60 * 60 * 10;
+SimEndTime = 1.5 * 60 * 60 * 7;
 TimeStep = 0.1;
 CON.dt = TimeStep;
 computer_dt = 0.1;
